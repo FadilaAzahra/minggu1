@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head></head>
-    <body> 
-        Ini baris 1
-        <br>
-        Ini baris 2
-
-    </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator Sederhana</title>
+<script>
+function hitung(operasi) {
+    var angka1 = parseFloat(document.getElementById('angka1').value);
+    var angka2 = parseFloat(document.getElementById('angka2').value);
+    var hasil;
+    switch(operasi) {
+        case '+':
+            hasil = angka1 + angka2;
+            break;
+        case '-':
+            hasil = angka1 - angka2;
+            break;
+        case '*':
+            hasil = angka1 * angka2;
+            break;
+        case '/':
+            hasil = angka1 / angka2;
+            break;
+    }
+    document.getElementById('hasil').value = hasil;
+}
+</script>
+</head>
+<body>
+<div id="kalkulator">
+    <input type="number" id="angka1" placeholder="Angka 1">
+    <input type="number" id="angka2" placeholder="Angka 2">
+    <button onclick="hitung('+')">+</button>
+    <button onclick="hitung('-')">-</button>
+    <button onclick="hitung('*')">*</button>
+    <button onclick="hitung('/')">/</button>
+    <input type="text" id="hasil" placeholder="Hasil" readonly>
+</div>
+</body>
 </html>
